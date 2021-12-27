@@ -121,7 +121,7 @@ class Main_Window(ttk.Frame):
             except:
                 pass
             
-            self.cameraFeed.after(20,self.captureOpenCvVideo)  
+            self.cameraFeed.after(5,self.captureOpenCvVideo)  
     
     ###> Exit Main Window       
     def exitWindow(self):
