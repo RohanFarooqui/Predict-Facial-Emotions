@@ -11,7 +11,8 @@ from keras.layers import Conv2D
 from tensorflow.keras.optimizers import Adam 
 from keras.layers import MaxPooling2D
 from keras.preprocessing.image import ImageDataGenerator
-
+#> Logs epoches in CSV
+from keras.callbacks import CSVLogger
 
 ##> Variables Define 
 
@@ -57,9 +58,9 @@ emotionsModal.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, 
 #> Epoches : The number times that the learning algorithm will work through the entire training dataset.
 
 #> Save Logs in CSV FILE
-csv_logger = CSVLogger(file_name+'.log')
+csv_logger = CSVLogger("train_modal_logs/"+file_name+'.log', append=True, separator=',')
 
 emotionsModal_info = emotionsModal.fit_generator(trainGenerator,steps_per_epoch=28709 // 64,epochs=50,validation_data=validation_generator,validation_steps=7178 // 64, callbacks=[csv_logger])
 
 ##> Save Modal Weights 
-emotionsModal.save_weights(file_name+'.h5')
+emotionsModal.save_weights("train_modal/"+file_name+'.h5')
