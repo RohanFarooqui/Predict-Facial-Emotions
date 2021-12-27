@@ -19,6 +19,8 @@ from keras.preprocessing.image import ImageDataGenerator
 trainingDirectory   = 'data/train'
 #> Test Folder Path
 validationDirectory = 'data/test'
+#> Modal Weights / CSV log file name 
+file_name = "epochs_50_model"
 
 ##> Initialize the training and validation generators
 trainDataGenerator      = ImageDataGenerator(rescale=1./255)
@@ -55,8 +57,9 @@ emotionsModal.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, 
 #> Epoches : The number times that the learning algorithm will work through the entire training dataset.
 
 #> Save Logs in CSV FILE
+csv_logger = CSVLogger(file_name+'.log')
 
-emotionsModal_info = emotionsModal.fit_generator(trainGenerator,steps_per_epoch=28709 // 64,epochs=50,validation_data=validation_generator,validation_steps=7178 // 64)
+emotionsModal_info = emotionsModal.fit_generator(trainGenerator,steps_per_epoch=28709 // 64,epochs=50,validation_data=validation_generator,validation_steps=7178 // 64, callbacks=[csv_logger])
 
 ##> Save Modal Weights 
-emotionsModal.save_weights('epochs_50_model.h5')
+emotionsModal.save_weights(file_name+'.h5')
