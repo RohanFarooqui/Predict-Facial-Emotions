@@ -54,9 +54,9 @@ emotionsModal.add(Dense(7, activation='softmax'))
 emotionsModal.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, decay=1e-6),metrics=['accuracy'])
 #> Epoches : The number times that the learning algorithm will work through the entire training dataset.
 
-
+#> Save Logs in CSV FILE
 
 emotionsModal_info = emotionsModal.fit_generator(trainGenerator,steps_per_epoch=28709 // 64,epochs=50,validation_data=validation_generator,validation_steps=7178 // 64)
 
 ##> Save Modal Weights 
-emotionsModal.save_weights('model.h5')
+emotionsModal.save_weights('epochs_50_model.h5')
