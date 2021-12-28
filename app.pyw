@@ -48,8 +48,8 @@ emotion_model.add(Flatten())
 emotion_model.add(Dense(1024, activation='relu'))
 emotion_model.add(Dropout(0.5))
 emotion_model.add(Dense(7, activation='softmax'))
-#> Load Weights from Modal File 
-emotion_model.load_weights('modal/model.h5')
+#> Load Weights from Modal File
+emotion_model.load_weights('train_modal/epochs_1000_model.h5')
 
 #> Capture Feed from Video Cam
 cap    = cv2.VideoCapture(0)
@@ -121,7 +121,7 @@ class Main_Window(ttk.Frame):
             except:
                 pass
             
-            self.cameraFeed.after(5,self.captureOpenCvVideo)  
+            self.cameraFeed.after(1,self.captureOpenCvVideo)  
     
     ###> Exit Main Window       
     def exitWindow(self):
