@@ -40,29 +40,29 @@ from keras.preprocessing.image import ImageDataGenerator
 #> Disable Tensor Flow Warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 #> Sequential : allows you to create models
-emotion_model = Sequential()
+emotionsModel = Sequential()
 #> Conv2D : Creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs.
 #> Kernal Size : An integer or tuple/list of 2 integers, specifying the height and width of the 2D convolution window.
 #> activation relu : Use to neglact values less than or equal to ZERO 
-emotion_model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(48,48,1)))
-emotion_model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
-emotion_model.add(MaxPooling2D(pool_size=(2, 2)))
+emotionsModel.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(48,48,1)))
+emotionsModel.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
+emotionsModel.add(MaxPooling2D(pool_size=(2, 2)))
 #> Dropout : To Prevent Neural Networks from Overfitting
-emotion_model.add(Dropout(0.25))
-emotion_model.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
+emotionsModel.add(Dropout(0.25))
+emotionsModel.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
 #> MaxPooling2D : Take the maximum value over an input window size
-emotion_model.add(MaxPooling2D(pool_size=(2, 2)))
-emotion_model.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
-emotion_model.add(MaxPooling2D(pool_size=(2, 2)))
-emotion_model.add(Dropout(0.25))
+emotionsModel.add(MaxPooling2D(pool_size=(2, 2)))
+emotionsModel.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
+emotionsModel.add(MaxPooling2D(pool_size=(2, 2)))
+emotionsModel.add(Dropout(0.25))
 #> Flatten take array of elements and convert into 1D
-emotion_model.add(Flatten())
+emotionsModel.add(Flatten())
 #> Dense : It feeds all outputs from the previous layer to all its neurons, each neuron providing one output to the next layer.
-emotion_model.add(Dense(1024, activation='relu'))
-emotion_model.add(Dropout(0.5))
-emotion_model.add(Dense(7, activation='softmax'))
+emotionsModel.add(Dense(1024, activation='relu'))
+emotionsModel.add(Dropout(0.5))
+emotionsModel.add(Dense(7, activation='softmax'))
 #> Load Weights from Modal File
-emotion_model.load_weights('train_modal/epochs_1000_model.h5')
+emotionsModel.load_weights('train_modal/epochs_1000_model.h5')
 #> Capture Feed from Video Cam
 cap    = cv2.VideoCapture(0)
 
@@ -105,7 +105,7 @@ class Main_Window(ttk.Frame):
             roi_gray_frame = gray_frame[y:y + h, x:x + w]
             cropped_img = np.expand_dims(np.expand_dims(cv2.resize(roi_gray_frame, (48, 48)), -1), 0)
             #> Predict emotions using emotion model
-            emotion_prediction = emotion_model.predict(cropped_img)
+            emotion_prediction = emotionsModel.predict(cropped_img)
             #> Give Index for emotion
             maximumIndex = int(np.argmax(emotion_prediction))
              
