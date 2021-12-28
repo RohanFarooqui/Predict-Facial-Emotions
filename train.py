@@ -21,7 +21,8 @@ trainingDirectory   = 'data/train'
 #> Test Folder Path
 validationDirectory = 'data/test'
 #> Modal Weights / CSV log file name 
-file_name = "epochs_50_model"
+file_name = "epochs_1000_model"
+epoch_val = 1000
 
 ##> Initialize the training and validation generators
 trainDataGenerator      = ImageDataGenerator(rescale=1./255)
@@ -60,7 +61,7 @@ emotionsModal.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, 
 #> Save Logs in CSV FILE
 csv_logger = CSVLogger("train_modal_logs/"+file_name+'.log', append=True, separator=',')
 
-emotionsModal_info = emotionsModal.fit_generator(trainGenerator,steps_per_epoch=28709 // 64,epochs=50,validation_data=validation_generator,validation_steps=7178 // 64, callbacks=[csv_logger])
+emotionsModal_info = emotionsModal.fit_generator(trainGenerator,steps_per_epoch=28709 // 64,epochs=epoch_val,validation_data=validation_generator,validation_steps=7178 // 64, callbacks=[csv_logger])
 
 ##> Save Modal Weights 
 emotionsModal.save_weights("train_modal/"+file_name+'.h5')
