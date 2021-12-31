@@ -63,7 +63,7 @@ emotionsModal.add(Dense(7, activation='softmax'))
 
 ##> Compile and train the model
 emotionsModal.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, decay=1e-6),metrics=['accuracy'])
-#> Epoches : The number times that the learning algorithm will work through the entire training dataset.
+#> Epochs : The number times that the learning algorithm will work through the entire training dataset.
 
 #> Save Logs in CSV FILE
 csv_logger = CSVLogger("train_modal_logs/"+file_name+'.log', append=True, separator=',')
