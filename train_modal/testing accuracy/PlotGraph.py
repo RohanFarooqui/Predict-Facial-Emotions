@@ -39,15 +39,17 @@ def getXaxisAndYaxisValues(fileList):
 
 ## Draw Graph
 def plotgraph(graphData):
-    for i in graphData:
+    #for i in graphData:
         #print(i,graphData[i])
-        plt.plot(i,graphData[i],marker='o', markersize=7,label = str(i))
-
+        #plt.plot(i,graphData[i],marker='o', markersize=7,label = str(i))
+    print(graphData.keys())
+    print(graphData.values())
+    plt.plot(graphData.keys(),graphData.values(),marker='o', markersize=7)
     plt.ylabel('Accuracy')  
     plt.xlabel('Epoch')
-    plt.title('Accuracy Graph')
+    plt.title('Accuracy Graph (Training)')
     # show a legend on the plot
-    plt.legend()
+    #plt.legend()
     # function to show the plot
     plt.show()
 
