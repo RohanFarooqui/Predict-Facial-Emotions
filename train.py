@@ -46,6 +46,9 @@ emotionsModal.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
 #> MaxPooling2D : Take the maximum value over an input window size
 emotionsModal.add(MaxPooling2D(pool_size=(2, 2)))
 #> Dropout : To Prevent Neural Networks from Overfitting
+# There are two techniques for from prevent modal from unerfitting and overfitting we need some regulization technique
+#tech 1 : dropout.
+#tech 2 : batch normalization.
 emotionsModal.add(Dropout(0.25))
 
 emotionsModal.add(Conv2D(128, kernel_size=(3, 3), activation='relu'))
@@ -62,6 +65,7 @@ emotionsModal.add(Dense(7, activation='softmax'))
 
 
 ##> Compile and train the model
+# Optimizer : update weight in back progration using in loss function.
 emotionsModal.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, decay=1e-6),metrics=['accuracy'])
 #> Epochs : The number times that the learning algorithm will work through the entire training dataset.
 
