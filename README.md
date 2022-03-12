@@ -1,4 +1,4 @@
-<img src="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/ML_Prediction%20System.png" width="300" height="300">
+<img src="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/ML_Prediction%20System.png" width="500" height="300">
 
 # Predict Facial Emotions using CNN
 
