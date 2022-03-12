@@ -62,7 +62,7 @@ emotionsModel.add(Dense(1024, activation='relu'))
 emotionsModel.add(Dropout(0.5))
 emotionsModel.add(Dense(7, activation='softmax'))
 #> Load Weights from Modal File
-emotionsModel.load_weights('epochs_5000_model.h5')
+emotionsModel.load_weights('Data/epochs_5000_model.h5')
 #> Capture Feed from Video Cam
 cap    = cv2.VideoCapture(0)
 
@@ -88,11 +88,11 @@ class Main_Window(ttk.Frame):
         #> CV - Resize Frame
         frame = cv2.resize(frame,(300,300))
         #> Cascade Classifier : used to detect objects in other images .. In this case use to detect the bounding boxes of face in the webcam.
-        bounding_box = cv2.CascadeClassifier('haarcascade/haarcascade_frontalface_default.xml')
+        bounding_box = cv2.CascadeClassifier('Data/haarcascade/haarcascade_frontalface_default.xml')
         #> Emotion List
         emotionDictionary = {0: "   Angry   ", 1: "Disgusted", 2: "  Fearful  ", 3: "   Happy   ", 4: "  Neutral  ", 5: "    Sad    ", 6: "Surprised"}
         #> Emotion Image Links
-        emotionImagePath  = {0:"emojis/angry.png",2:"emojis/disgusted.png",2:"emojis/fearful.png",3:"emojis/happy.png",4:"emojis/neutral.png",5:"emojis/sad.png",6:"emojis/surpriced.png"}
+        emotionImagePath  = {0:"Data/emojis/angry.png",2:"Data/emojis/disgusted.png",2:"Data/emojis/fearful.png",3:"Data/emojis/happy.png",4:"Data/emojis/neutral.png",5:"Data/emojis/sad.png",6:"emojis/surpriced.png"}
         #> cvtColor()     : convert an image from one color space to another
         #> COLOR_BGR2GRAY : convert our original image from the BGR color space to gray
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -177,7 +177,7 @@ class Main_Window(ttk.Frame):
         ##> Make Resizable False
         self.root.resizable(width=False, height=False)
         ##> Set Icon on Top Bar
-        try: self.root.iconbitmap("Logo\logo.ico")
+        try: self.root.iconbitmap("Data/Logo/logo.ico")
         except: pass
         
         style = ThemedStyle(self.root)
@@ -186,7 +186,7 @@ class Main_Window(ttk.Frame):
         ##> First box : Heading
         self.root.first_box = tk.Frame(self.root,relief=FLAT,borderwidth=1)
         #> Set Logo
-        self.root.logo_1 = PhotoImage(file = 'Logo/logo (1).png')
+        self.root.logo_1 = PhotoImage(file = 'Data/Logo/logo.png')
         label = Label(self.root.first_box,image=self.root.logo_1,width="50",height="50")
         label.grid(row=0, column=1)
         label.image = self.root.logo_1
