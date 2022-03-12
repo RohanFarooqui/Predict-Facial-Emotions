@@ -24,7 +24,7 @@
 ### **To Train Model**:
     
   * Extract <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/Train/data/data.zip">data.zip<a> in data folder.
-  *
-     
-
-##### Note : I have already trained the model with different <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/tree/main/train_modal">epoches</a>
+  * Run <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/Train/train.py">Train.py</a> File.
+  * Epoches will be created in <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/tree/main/Train/train_modal/epoches">"Train/train_modal/epoches"</a> folder.
+  * Epoches Logs will be created in <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/tree/main/Train/train_modal/epoches_logs">"Train/train_modal/epoches_logs/"</a> folder.
+  * Place the epoch file in <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/tree/main/App/Data"> "App/Data/"</a> folder.

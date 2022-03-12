@@ -20,9 +20,10 @@ from keras.callbacks import CSVLogger
 trainingDirectory   = 'data/train'
 #> Test Folder Path
 validationDirectory = 'data/test'
-#> Modal Weights / CSV log file name 
-file_name = "epochs_1000_model"
+#> Modal Weights / CSV log file name
 epoch_val = 1000
+file_name = "epochs_"+str(epoch_val)+"_model"
+
 
 ##> Initialize the training and validation generators
 trainDataGenerator      = ImageDataGenerator(rescale=1./255)
@@ -70,10 +71,10 @@ emotionsModal.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, 
 #> Epochs : The number times that the learning algorithm will work through the entire training dataset.
 
 #> Save Logs in CSV FILE
-csv_logger = CSVLogger("train_modal_logs/"+file_name+'.log', append=True, separator=',')
+csv_logger = CSVLogger("train_modal/epoches_logs/"+file_name+'.log', append=True, separator=',')
 #> fit_generator : Used to train our machine learning and deep learning models
 #> Epoch : indicates the number of passes of the entire training dataset
 emotionsModal_info = emotionsModal.fit_generator(trainGenerator,steps_per_epoch=28709 // 64,epochs=epoch_val,validation_data=validation_generator,validation_steps=7178 // 64, callbacks=[csv_logger])
 
 ##> Save Modal Weights 
-emotionsModal.save_weights("train_modal/"+file_name+'.h5')
+emotionsModal.save_weights("train_modal/epoches/"+file_name+'.h5')
