@@ -10,13 +10,21 @@
 </p>
 
 
-### **Run Source Code** :
-      Install following libraries :
+### **Libraries to Install** :
+    * pip install ttkthemes
+    * pip install opencv-python
+    * pip install keras==2.6.0
+    * pip install tensorflow==2.6.0
 
-         * pip install tensorflow==2.6.0.
-         * pip install keras==2.6.0.
-         * Extra data.zip in data folder.
-         * Run train.py for training
-         * Run Gui.py to run the main application.
+### **To Run App** :
+
+  * Run <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/App/app.pyw">App.pyw</a> File.
+  * Wait for GUI to appear.
+
+### **To Train Model**:
+    
+  * Extract <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/Train/data/data.zip">data.zip<a> in data folder.
+  *
+     
 
 ##### Note : I have already trained the model with different <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/tree/main/train_modal">epoches</a>
