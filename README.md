@@ -1,6 +1,6 @@
 ![](https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/ML_Prediction%20System.png)
 
-# Predict Facial Emotions
+# Predict Facial Emotions using CNN
 
 <p align="center">
   <a href=""><img src="https://img.shields.io/badge/python-3.9-blue" alt="Python Version"></a>
@@ -8,7 +8,6 @@
   <a href=""><img src="https://img.shields.io/badge/keras-2.6.0-orange" alt="Keras"></a>
   <a href=""><img src="https://img.shields.io/badge/ttk%20Themes-3.2.0-green?style=plastic" alt="ttk themes version"></a>
 </p>
-
 
 ### **Libraries to Install** :
   * pip install ttkthemes
@@ -32,4 +31,5 @@
 
 ### Refrences :
   
-  * ![](https://data-flair.training/blogs/create-emoji-with-deep-learning/)
+  * <a href="https://data-flair.training/blogs/create-emoji-with-deep-learning/">Emojify – Create your own emoji with Deep Learning</a>.
+  * Dataset <a href="https://www.kaggle.com/msambare/fer2013?">FER2013 dataset</a>.
