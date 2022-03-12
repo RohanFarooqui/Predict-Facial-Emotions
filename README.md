@@ -1,4 +1,4 @@
-![](https://github.com/RohanFarooqui/Password-Generator-1.0/blob/master/Password%20Generator%201.1/1.1.png)
+![](https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/ML_Prediction%20System.png)
 
 # Predict Facial Emotions
 
