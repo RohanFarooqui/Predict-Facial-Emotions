@@ -1,5 +1,6 @@
+![](https://github.com/RohanFarooqui/Password-Generator-1.0/blob/master/Password%20Generator%201.1/1.1.png)
 
-# Predict Facial Emotions | Machine Learning Project  
+# Predict Facial Emotions
 
 <p align="center">
   <a href=""><img src="https://img.shields.io/badge/python-3.9-blue" alt="Python Version"></a>
@@ -9,19 +10,18 @@
 </p>
 
 
-### **To Run Source Code** :
+### **Run Source Code** :
+      Install following libraries :
 
-   Install following libraries :
-  
          * pip install tensorflow==2.6.0.
-         
          * pip install keras==2.6.0.
-         
          * Extra data.zip in data folder.
-         
-         * Run train.py
-         
-         * Run Gui.py
+         * Run train.py for training
+         * Run Gui.py to run the main application.
+
+##### Note : I have already trained the model with different <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/tree/main/train_modal">epoches</a>
+
+
 
 
 ### **Files Link** :
