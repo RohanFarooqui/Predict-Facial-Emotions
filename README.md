@@ -20,28 +20,3 @@
          * Run Gui.py to run the main application.
 
 ##### Note : I have already trained the model with different <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/tree/main/train_modal">epoches</a>
-
-
-
-
-### **Files Link** :
-      
-<table>
-  <tr> 
-    <td> DataSet Link - Kaggle  </td>
-    <td> <a href="https://www.kaggle.com/msambare/fer2013?"> Facial Expression Recognition Dataset </a></td>
-  </tr>
-  <tr> 
-    <td> Train.py   </td>
-    <td> <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/train.py"> Train Modal </a></td>
-  </tr>
-   <tr> 
-    <td> App.py   </td>
-    <td> <a href="https://github.com/RohanFarooqui/Predict-Facial-Emotions/blob/main/app.py"> Run Gui App </a></td>
-  </tr>
-</table>
-
-
-
-
-         
