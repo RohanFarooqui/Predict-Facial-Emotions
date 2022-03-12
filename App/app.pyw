@@ -62,7 +62,7 @@ emotionsModel.add(Dense(1024, activation='relu'))
 emotionsModel.add(Dropout(0.5))
 emotionsModel.add(Dense(7, activation='softmax'))
 #> Load Weights from Modal File
-emotionsModel.load_weights('train_modal/epochs_1000_model.h5')
+emotionsModel.load_weights('epochs_5000_model.h5')
 #> Capture Feed from Video Cam
 cap    = cv2.VideoCapture(0)
 
