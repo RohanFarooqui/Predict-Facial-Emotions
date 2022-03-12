@@ -92,7 +92,7 @@ class Main_Window(ttk.Frame):
         #> Emotion List
         emotionDictionary = {0: "   Angry   ", 1: "Disgusted", 2: "  Fearful  ", 3: "   Happy   ", 4: "  Neutral  ", 5: "    Sad    ", 6: "Surprised"}
         #> Emotion Image Links
-        emotionImagePath  = {0:"Data/emojis/angry.png",2:"Data/emojis/disgusted.png",2:"Data/emojis/fearful.png",3:"Data/emojis/happy.png",4:"Data/emojis/neutral.png",5:"Data/emojis/sad.png",6:"emojis/surpriced.png"}
+        emotionImagePath  = {0:"Data/emojis/angry.png",2:"Data/emojis/disgusted.png",2:"Data/emojis/fearful.png",3:"Data/emojis/happy.png",4:"Data/emojis/neutral.png",5:"Data/emojis/sad.png",6:"Data/emojis/surprised.png"}
         #> cvtColor()     : convert an image from one color space to another
         #> COLOR_BGR2GRAY : convert our original image from the BGR color space to gray
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
